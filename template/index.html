@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{t.title}}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>{{t.title}}</h1>
+
+<!-- 🌍 언어 선택 -->
+<div>
+    <a href="/?lang=ko">한국어</a> |
+    <a href="/?lang=en">English</a> |
+    <a href="/?lang=jp">日本語</a> |
+    <a href="/?lang=zh">繁體中文</a> |
+    <a href="/?lang=de">Deutsch</a> |
+    <a href="/?lang=yue">廣東話</a>
+</div>
+
+<form method="post">
+    <button type="submit">{{t.button}}</button>
+</form>
+
+{% if result %}
+<h2>{{t.result}}</h2>
+
+{% for m in result %}
+<div class="card">
+    <p>
+        {{m.p1}} ({{m.mmr1}}) VS {{m.p2}} ({{m.mmr2}})
+    </p>
+    <p class="win">
+        {{t.win}}: {{m.win_prob}}
+    </p>
+</div>
+{% endfor %}
+
+{% endif %}
+
+</body>
+</html>
