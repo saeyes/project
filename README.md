@@ -1,5 +1,6 @@
 # project
 matching_project/
+
 │
 ├── app.py
 ├── model.py
@@ -7,7 +8,9 @@ matching_project/
 ├── translations.py  
 │
 ├── templates/
-│     └── index.html
+
+│  └── index.html
 │
 └── static/
+
       └── style.css
